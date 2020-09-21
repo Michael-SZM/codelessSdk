@@ -1,0 +1,3 @@
+rootProject.name='CodeLessSdk'
+include ':app'
+include ':collectorsdk'
