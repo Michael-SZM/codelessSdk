@@ -8,6 +8,30 @@ import io.reactivex.schedulers.Schedulers
 import org.reactivestreams.Subscription
 import java.util.*
 
+/**
+ *
+好分数辅导：
+key: HwKsECx7c39eV93R865c8vXpkjHgfIPO
+项目id: 2
+
+
+好分数家长：
+key: tgLofLgHDOhjD3zckhZa0DqRb1P8Ll8X
+项目id: 4
+
+好分数学生：
+key: AttjhKxt2UYrABGEusuqw2OpbR0YhN5P
+项目id: 3
+
+
+小程序测试：
+key: 9gCwW1kgVrUddH237eJ0367eWgKwPRn3
+项目id: 5
+
+web测试：
+key:  RLVxmDPQ8tPeyT1PZlDkHZMcCEORK5Nu
+项目id: 26
+ */
 class NetFacade private constructor(private val netApi: CodeLessNetApi = DefaultNetApiIMpl()) {
 
     val tokenLog = "{\"id\":\"2\",\"key\":\"HwKsECx7c39eV93R865c8vXpkjHgfIPO\"}"

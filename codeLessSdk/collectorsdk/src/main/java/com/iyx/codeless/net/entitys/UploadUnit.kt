@@ -18,34 +18,34 @@ data class Page(val page_title:String="",
 
 
 // 上报用户数据使用
-data class RequestBodyBaseInfoBean(val key:String?="",
-                                   val uuid:String?="",
-                                   val user_id:String="",
+data class RequestBodyBaseInfoBean(var key:String?="",
+                                   var uuid:String?="",
+                                   var user_id:String="",
                                    var sessionId:String="",
-                                   val app_info:AppInfo= AppInfo(),
-                                   val user_info:UserInfo= UserInfo(),
-                                   val location:LocationInfo= LocationInfo(),
-                                   val device:DeviceInfo=DeviceInfo()
+                                   var app_info:AppInfo= AppInfo(),
+                                   var user_info:UserInfo= UserInfo(),
+                                   var location:LocationInfo= LocationInfo(),
+                                   var device:DeviceInfo=DeviceInfo()
 ):Serializable
 
 
-data class AppInfo(val app_id:String?=null,
-                    val app_version:String?=null,
-                    val app_package_id:String?=null,
-                    val sdk_version:String?=null
+data class AppInfo(var app_id:String?=null,
+                    var app_version:String?=null,
+                    var app_package_id:String?=null,
+                    var sdk_version:String?=null
 ):Serializable
 
-data class UserInfo(val open_id:String="",
-                    val union_id:String="",
-                    val ip:String="",
-                    val student_id:String="",
-                    val school_id:String="",
-                    val grade:String="",
-                    val nick_name:String="",
-                    val user_name:String="",
-                    val age:Int=0,
-                    val gender:Int=-1,
-                    val avatar_url:String=""
+data class UserInfo(var open_id:String="",
+                    var union_id:String="",
+                    var ip:String="",
+                    var student_id:String="",
+                    var school_id:String="",
+                    var grade:String="",
+                    var nick_name:String="",
+                    var user_name:String="",
+                    var age:Int=0,
+                    var gender:Int=-1,
+                    var avatar_url:String=""
 
 ):Serializable
 

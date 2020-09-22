@@ -87,6 +87,12 @@ CodeLessFacade.handleDialog(getWindow());
 CodeLessFacade.wrapInflaterStatic(inflater);
 ```
 
+针对项目中的PopWindow需要单独处理一下，主要是把window提供给sdk并且LayoutInflater包装一下。方法如下：
+```
+CodeLessFacade.wrapPopWindow(this)  // 需要确保PopWindow的contentView不为null
+CodeLessFacade.wrapInflaterStatic(inflater)
+```
+
 
 开启日志打印   CodeLessSdk.codeLessSdk.needPrintLog(true)   运行工程,过滤 error  关键字 kk--  
 点击界面上的元素，可以看到类似  MainActivity_activity_main_btn_01_Hello World!_  的日志，，，该日志是对应的事件的唯一ID  这里暂且称作  eventId
