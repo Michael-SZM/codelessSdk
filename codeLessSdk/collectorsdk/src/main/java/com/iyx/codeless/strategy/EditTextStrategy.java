@@ -15,31 +15,31 @@ import java.util.Map;
 
 public class EditTextStrategy extends DataStrategy{
 
-    private EditText editText;
-    private TextWatcher watcher;
+    private IAsynCallBack mIAsynCallBack;
+    private TextWatcher watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            mIAsynCallBack.onASyncBack(s.toString());
+        }
+    };
 
     @SuppressLint("RestrictedApi")
     @Nullable
     @Override
     public Pair<Object, Map<String, Object>> fetchTargetData(@NonNull View container, IAsynCallBack iAsynCallBack) {
         Preconditions.checkNotNull(container);
-        editText = (EditText) container;
-        watcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                iAsynCallBack.onASyncBack(s.toString());
-            }
-        };
+        mIAsynCallBack = iAsynCallBack;
+        EditText editText = (EditText) container;
 
         editText.removeTextChangedListener(watcher);
         editText.addTextChangedListener(watcher);
@@ -53,6 +53,5 @@ public class EditTextStrategy extends DataStrategy{
     @Override
     public void clear() {
         super.clear();
-        editText.removeTextChangedListener(watcher);
     }
 }
